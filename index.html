@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,29 +9,33 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <header>
         <h1>Pascal Petivel :D</h1>
         <div>
 
-            <label for="menuCheck"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg></label>
+            <label for="menuCheck"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+                </svg></label>
             <input type="checkbox" id="menuCheck">
-        <menu>
-            <a href="#bevezeto">Bevezető</a>
-            <a href="#AdatTipusok">Adat típusok</a>
-            <a href="">ize</a>
-            <a href="">ize</a>
-            <a href="">ize</a>
-            <a href="">ize</a>
-        </menu>
-    </div>
+            <menu>
+                <a href="#bevezeto">Bevezető</a>
+                <a href="#AdatTipusok">Adat típusok</a>
+                <a href="#függvenyek">Függvények</a>
+                <a href="#egyszeruprogramok">Egyszerű programok</a>
+                <a href="">ize</a>
+                <a href="">ize</a>
+            </menu>
+        </div>
     </header>
     <main>
         <section>
             <h2 id="bevezeto">Bevezető</h2>
             <span>
                 <p>Bármilyen meglepő nem fejből fogom írni az össze szöveget.</p>
-                <p>Azt hogy mi a program vagy programozás azt nem vagyok hajlandó belerakni. (kivéve ha megkér avalaki)</p>
+                <p>Azt hogy mi a program vagy programozás azt nem vagyok hajlandó belerakni. (kivéve ha megkér avalaki)
+                </p>
             </span>
             <p>
                 A pascal programozáshoz célszerű letölteni valamit ammiben írni is tudjuk szóval itt van ez:
@@ -38,25 +43,25 @@
             </p>
         </section>
         <section>
-            <h2 id="AdatTipusok" >Adat típusok</h2>
+            <h2 id="AdatTipusok">Adat típusok</h2>
             <ul>
-                
+
                 <li>
-                    egész szám (<strong>integer</strong>): Pl.  
+                    egész szám (<strong>integer</strong>): Pl.
                     <ul>
                         <li>5</li>
                         <li>3+4</li>
                     </ul>
                 </li>
                 <li>
-                    szöveg (<strong>string</strong>): PL.  
+                    szöveg (<strong>string</strong>): PL.
                     <ul>
                         <li>'zsiráf'</li>
                         <li>'nem zsiráf'</li>
                     </ul>
                 </li>
                 <li>
-                    karakter (<strong>char</strong>): PL.  
+                    karakter (<strong>char</strong>): PL.
                     <ul>
                         <li>'R'</li>
                         <li>'ó'</li>
@@ -65,7 +70,7 @@
                     </ul>
                 </li>
                 <li>
-                    törtszám (<strong>real</strong>): PL.  
+                    törtszám (<strong>real</strong>): PL.
                     <ul>
                         <li>2.006</li>
                         <li>0.6</li>
@@ -73,7 +78,7 @@
                     </ul>
                 </li>
                 <li>
-                    logikai (<strong>boolean</strong>): PL.  
+                    logikai (<strong>boolean</strong>): PL.
                     <ul>
                         <li>TRUE</li>
                         <li>FALSE</li>
@@ -85,7 +90,7 @@
             <h2>Műveletek</h2>
             <ul>
                 <li>
-                    Alap műveletek  
+                    Alap műveletek
                     <ul>
                         <li>+</li>
                         <li>-</li>
@@ -143,7 +148,75 @@
                 </li>
             </ul>
         </section>
+        <section>
+            <h2 id="függvenyek">Függvények</h2>
+            <ul>
+                <li>
+                    Négyzetgyök
+                    <ul>
+                        <li>sqr(25) eredménye 5</li>
+                    </ul>
+                </li>
+                <li>
+                    Kerekítés
+                    <ul>
+                        <li>round(3.65) eredménye 3</li>
+                    </ul>
+                </li>
+                <li>
+                    Csonkítás
+                    <ul>
+                        <li>trunc(4.123) eredménye 4</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2 id="egyszeruprogramok">Egyszerű programok</h2>
+
+            <ul>
+                <li>
+                    A program neve
+                    <ul>
+                        <li>program project1;</li>
+                    </ul>
+                </li>
+                <li>
+                    Itt kezdődik a program futása
+                    <ul>
+                        <li>begin</li>
+                    </ul>
+                </li>
+                <li>
+                    Itt fejeződik be a futás
+                    <ul>
+                        <li>end.</li>
+                    </ul>
+                </li>
+                <li>
+                    Ki írja a benne lévő adatot a konzolra
+                    <ul>
+                        <li>write('szöveg')</li>
+                    </ul>
+                </li>
+            </ul>
+    <h3>Így néz ki a gyakorlatban egy egyszerű program</h3>
+            <pre>
+<code>
+(*Ezek a jelek között lehet írni kommenteket*)
+
+program project1;
+begin               
+    write('A pascal')  
+    write('buta nyelv')
+    readln;
+end.
+</code>
+            </pre>
+            </section>
+            
     </main>
     <footer></footer>
 </body>
+
 </html>

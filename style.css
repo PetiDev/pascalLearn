@@ -23,6 +23,13 @@ h2{
     font-size: 2rem;
     font-weight: 700;
 }
+h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+i{
+    font-style: italic;
+}
 
 body{
     display: grid;
@@ -69,7 +76,9 @@ header menu a:hover,menu a:focus-within{
 #menuCheck:checked + menu{
     transform: scaleY(1);
 }
-
+main h3{
+    margin-top: 2rem;
+}
 section{
     pointer-events: none;
     padding-inline: 10rem;
@@ -89,4 +98,7 @@ strong{
 }
 ul ul{
     margin-left: 1rem;
+}
+ul ul{
+    margin-bottom: 1rem;
 }
