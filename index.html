@@ -24,7 +24,11 @@
                 <a href="#AdatTipusok">Adat típusok</a>
                 <a href="#függvenyek">Függvények</a>
                 <a href="#egyszeruprogramok">Egyszerű programok</a>
-                <a href="valtozok">Változók</a>
+                <a href="#valtozok">Változók</a>
+                <a href="#elagazas">Elágazás</a>
+                <a href="#ciklusok" disabled>Ciklusok</a>
+                <a href="#tombok" disabled>Tömbök</a>
+                <a href="#eljarasokEsFuggvwnyek" disabled>Eljárások és függvények</a>
             </menu>
         </div>
     </header>
@@ -41,7 +45,8 @@
                 <a href="https://sourceforge.net/projects/lazarus/">Lazarus</a>
             </p>
             <p>
-                Vagy van egy online alternatíva: <a href="https://www.onlinegdb.com/online_pascal_compiler">online_pascal_compiler</a>
+                Vagy van egy online alternatíva: <a
+                    href="https://www.onlinegdb.com/online_pascal_compiler">online_pascal_compiler</a>
             </p>
         </section>
         <section>
@@ -101,6 +106,7 @@
                         <li>&gt;</li>
                         <li>&lt;</li>
                         <li> = </li>
+                        <li>&lt;&gt; nem egyenlő</li>
                     </ul>
                 </li>
                 <li>
@@ -198,12 +204,14 @@
                 <li>
                     Ki írja a benne lévő adatot a konzolra
                     <ul>
-                        <li>Write('szöveg')  <p>Nem kezd új sort a kiírás után</p></li>
-                        <li>Writeln('szöveg') <p>Kezd új sort miután kiírta</p></li>
+                        <li>Write('szöveg') <p>Nem kezd új sort a kiírás után</p>
+                        </li>
+                        <li>Writeln('szöveg') <p>Kezd új sort miután kiírta</p>
+                        </li>
                     </ul>
                 </li>
             </ul>
-    <h3>Így néz ki a gyakorlatban egy egyszerű program</h3>
+            <h3>Így néz ki a gyakorlatban egy egyszerű program</h3>
             <pre>
 <code>
 (*Ezek a jelek között lehet írni kommenteket*)
@@ -216,42 +224,42 @@ begin
 end.
 </code>
             </pre>
-            </section>
-            <section>
-                <h2 id="valtozok">Változók</h2>
-                <span>
-                    <p>A változókban adatokat lehet tárolni</p>
-                    <p>A változókkal úgy lehet műveleteket végezni mint ha csak az értékét írnánk oda</p>
-                    <p>Teljesen ugyan az mint matek órán</p>
-                </span>
-                <ul>
-                    <li>
-                        Változó definiálása
-                        <ul>
-                            <li><strong>Var</strong> <i>változóNév</i> : <i>adatTípus</i>;</li>
-                            <li><strong>Var</strong> kor : integer;</li>
-                            <li><strong>Var</strong> nev : string;</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Értékadás változóknak
-                        <ul>
-                            <li><i>változóNév</i> := <i>adat</i>;</li>
-                            <li>kor := 18;</li>
-                            <li>nev := 'Peti';</li>
-                        </ul>
-                    </li>
-                </ul>
-                <h3>Adatbekérés változóba</h3>
-                <ul>
+        </section>
+        <section>
+            <h2 id="valtozok">Változók</h2>
+            <span>
+                <p>A változókban adatokat lehet tárolni</p>
+                <p>A változókkal úgy lehet műveleteket végezni mint ha csak az értékét írnánk oda</p>
+                <p>Teljesen ugyan az mint matek órán</p>
+            </span>
+            <ul>
+                <li>
+                    Változó definiálása
                     <ul>
-                        <li>Readln( <i>változóNév</i> )</li>
-                        <li>Readln( nev )</li>
+                        <li><strong>Var</strong> <i>változóNév</i> : <i>adatTípus</i>;</li>
+                        <li><strong>Var</strong> kor : integer;</li>
+                        <li><strong>Var</strong> nev : string;</li>
                     </ul>
+                </li>
+                <li>
+                    Értékadás változóknak
+                    <ul>
+                        <li><i>változóNév</i> := <i>adat</i>;</li>
+                        <li>kor := 18;</li>
+                        <li>nev := 'Peti';</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Adatbekérés változóba</h3>
+            <ul>
+                <ul>
+                    <li>Readln( <i>változóNév</i> )</li>
+                    <li>Readln( nev )</li>
                 </ul>
+            </ul>
 
-                <h3>Kód példa:</h3>
-                <pre>
+            <h3>Kód példa:</h3>
+            <pre>
 <code>
 program valtozok;
 Var nev:string;
@@ -262,13 +270,58 @@ BEGIN
 END.
 </code>
                 </pre>
-            </section>
+        </section>
+        <section>
+            <h2 id="elagazas">Elágazás</h2>
+            <span>
+                <p>Eléggé egyenes ez a dolog, ha teljesül az elágazás feltétele akkor lefut a benne lévő kód aztán fut
+                    tovább a kód</p>
+            </span>
+            <ul>
+                <li>
+                    Egyszerű utasítás (ha igaz akkor csak egy sornak megfelelő kód tud lefutni utána)
+                    <ul>
+                        <li><strong>If</strong> <i>feltétel</i> <strong>then</strong> <i>Kód amit le akarsz
+                                futtatni</i>;</li>
+                        <li><strong>If</strong> 0 < 21 <strong>then</strong> writeln('igen nulla kisebb mint 21');</li>
+                    </ul>
+                </li>
+                <li>
+                    Összetett utasítás
+                    <ul>
+                        <li><strong>If</strong> <i>feltétel</i> <strong>then begin</strong> <br> <i>Kód amit le akarsz
+                                futtatni</i>; <br> <strong>end;</strong></li>
+                        <li><strong>If</strong> "alma" &lt;&gt; "banán" <strong>then begin</strong> <br>
+                            writeln('Nem');<br> writeln('Az alma nem banán'); <br> <strong>end;</strong></li>
+                    </ul>
+                </li>
+            </ul>
 
+            <ul>
+                <h3>Ha kezelni akarjuk azt is ha nem teljesült a feltétel</h3>
+                <li>
+                    Egyszerű utasítás
+                    <ul>
+                        <ul>
+                            <li><strong>If</strong> 0 < 21 <strong>then</strong> writeln('igen nulla kisebb mint 21')
+                                    <strong>else</strong> <i>Kód ami akkor fut le ha nem teljesült a feltétel</i></li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>
+                    Összetett utasítás
+                    <ul>
+                        <li><strong>If</strong> <i>feltétel</i> <strong>then begin</strong> <br> <i>Kód amit le akarsz
+                                futtatni</i>; <br> <strong>end else begin</strong> <br> <i>Kód ami akkor fut le ha nem teljesült a feltétel</i> <br> <strong>end;</strong></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
     </main>
     <footer>
         <section>
             <p>Nem használok pascalt már egy ideje, a esetleges kisebb hibákért elnézést kérek.</p>
-        <p>Ha githubon jelented a hibát a repository -n akkor kijavítom.</p>
+            <p>Ha githubon jelented a hibát a repository -n akkor kijavítom.</p>
         </section>
         <section>
             GitHub: <a href="https://github.com/PetiDev/">PetiDev</a>

@@ -109,3 +109,7 @@ footer section{
     border-left: 3px solid var(--clr-red);
     padding-inline: 1rem;
 }
+*[disabled]{
+    filter: grayscale();
+    cursor: not-allowed;
+}
