@@ -113,3 +113,14 @@ footer section{
     filter: grayscale();
     cursor: not-allowed;
 }
+
+@media (max-width: 730px) {
+    header h1{
+        display: none;
+    }
+}
+@media (max-width: 730px) {
+    main section{
+        padding: 1rem;
+    }
+}
