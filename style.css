@@ -30,6 +30,14 @@ h3{
 i{
     font-style: italic;
 }
+strong{
+    font-weight: 600;
+    color: var(--clr-red);
+}
+ul ul{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
 
 body{
     display: grid;
@@ -79,26 +87,25 @@ header menu a:hover,menu a:focus-within{
 main h3{
     margin-top: 2rem;
 }
-section{
+main section{
     pointer-events: none;
     padding-inline: 10rem;
     padding-block: 2rem;
     border-bottom: 3px solid var(--clr-green);
 }
 
-section h2{
+main section h2{
     padding-bottom: 1rem;
 }
-span{
+main span{
     padding: 1rem;
 }
-strong{
-    font-weight: 600;
-    color: var(--clr-red);
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
 }
-ul ul{
-    margin-left: 1rem;
-}
-ul ul{
-    margin-bottom: 1rem;
+footer section{
+    border-left: 3px solid var(--clr-red);
+    padding-inline: 1rem;
 }

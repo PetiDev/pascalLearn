@@ -24,7 +24,7 @@
                 <a href="#AdatTipusok">Adat típusok</a>
                 <a href="#függvenyek">Függvények</a>
                 <a href="#egyszeruprogramok">Egyszerű programok</a>
-                <a href="">ize</a>
+                <a href="valtozok">Változók</a>
                 <a href="">ize</a>
             </menu>
         </div>
@@ -172,7 +172,7 @@
             </ul>
         </section>
         <section>
-            <h2 id="egyszeruprogramok">Egyszerű programok</h2>
+            <h2 id="egyszeruprogram">Egyszerű program</h2>
 
             <ul>
                 <li>
@@ -196,7 +196,8 @@
                 <li>
                     Ki írja a benne lévő adatot a konzolra
                     <ul>
-                        <li>write('szöveg')</li>
+                        <li>Write('szöveg')  <p>Nem kezd új sort a kiírás után</p></li>
+                        <li>Writeln('szöveg') <p>Kezd új sort miután kiírta</p></li>
                     </ul>
                 </li>
             </ul>
@@ -214,9 +215,64 @@ end.
 </code>
             </pre>
             </section>
-            
+            <section>
+                <h2 id="valtozok">Változók</h2>
+                <span>
+                    <p>A változókban adatokat lehet tárolni</p>
+                    <p>A változókkal úgy lehet műveleteket végezni mint ha csak az értékét írnánk oda</p>
+                    <p>Teljesen ugyan az mint matek órán</p>
+                </span>
+                <ul>
+                    <li>
+                        Változó definiálása
+                        <ul>
+                            <li><strong>Var</strong> <i>változóNév</i> : <i>adatTípus</i>;</li>
+                            <li><strong>Var</strong> kor : integer;</li>
+                            <li><strong>Var</strong> nev : string;</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Értékadás változóknak
+                        <ul>
+                            <li><i>változóNév</i> := <i>adat</i>;</li>
+                            <li>kor := 18;</li>
+                            <li>nev := 'Peti';</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Adatbekérés változóba</h3>
+                <ul>
+                    <ul>
+                        <li>Readln( <i>változóNév</i> )</li>
+                        <li>Readln( nev )</li>
+                    </ul>
+                </ul>
+
+                <h3>Kód példa:</h3>
+                <pre>
+<code>
+program valtozok;
+Var nev:string;
+BEGIN
+    Write('Add meg a neved:');
+    Readln(nev);
+    Writeln('Szia, ' + nev + '!')
+END.
+</code>
+                </pre>
+            </section>
+
     </main>
-    <footer></footer>
+    <footer>
+        <section>
+            <p>Nem használok pascalt már egy ideje, a esetleges kisebb hibákért elnézést kérek.</p>
+        <p>Ha githubon jelented a hibát a repository -n akkor kijavítom.</p>
+        </section>
+        <section>
+            GitHub: <a href="https://github.com/PetiDev/">PetiDev</a>
+            Weboldal: <a href="https://petidev.github.io/PetiDevSite/">weboldal link :3</a>
+        </section>
+    </footer>
 </body>
 
 </html>
