@@ -1,0 +1,91 @@
+:root {
+    font-family: Calibri, trebuchet ms, sans-serif;
+    --clr-dark: rgb(28, 27, 34);
+    --clr-light: rgb(250, 250, 250);
+    --clr-red: rgb(163, 38, 57);
+    --clr-green: hsl(121, 62%, 39%);
+    --clr-notImportant-text: gray;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+    color-scheme: dark;
+    scroll-behavior: smooth;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+h2{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 3rem 1fr 100px;
+}
+header{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--clr-green);
+}
+header label:hover, header label:focus-within{
+    color: var(--clr-dark);
+}
+header label svg{
+    fill: currentColor;
+    height: 100%;
+}
+header menu{
+    height: fit-content;
+    transform: scaleY(0);
+    overflow: hidden;
+    transform-origin: top;
+    transition: transform ease .3s;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    background-color: var(--clr-dark);
+}
+
+header menu a{
+    padding-inline: 1rem;
+    padding-block: .3rem;
+    transition: .3s;
+    text-decoration: none;
+    color: currentColor;
+    font-size: 1.3rem;
+}
+header menu a:hover,menu a:focus-within{
+    background-color: var(--clr-green);
+}
+#menuCheck{
+    display: none;
+}
+#menuCheck:checked + menu{
+    transform: scaleY(1);
+}
+
+section{
+    pointer-events: none;
+    padding-inline: 10rem;
+    padding-block: 2rem;
+    border-bottom: 3px solid var(--clr-green);
+}
+
+section h2{
+    padding-bottom: 1rem;
+}
+span{
+    padding: 1rem;
+}
+strong{
+    font-weight: 600;
+}
+ul ul{
+    margin-left: 1rem;
+}
