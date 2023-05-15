@@ -7,7 +7,7 @@ codes.forEach(code => {
     lines.forEach(line => {
         formatedHTML += "<br>";
         let dontHightlithChar = false;
-
+        let dontHightlithCharColor = "red";
 
         let words = line.split(/(\s){1,4}/);
         words.forEach(word => {
@@ -58,6 +58,8 @@ codes.forEach(code => {
                     switch (char.toLowerCase()) {
                         case "'":
                             dontHightlithChar = !dontHightlithChar;
+                            dontHightlithCharColor = "crimson";
+                            
                             formatedHTML += `<span style="color: red">${char}</span>`;
                             break;
                         case "+":
@@ -72,7 +74,7 @@ codes.forEach(code => {
                         case ">":
                         case ";":
                             if (dontHightlithChar) {
-                                formatedHTML += char;
+                                formatedHTML += `<span style="color: ${dontHightlithCharColor}">${char}</span>`;
                             } else {
                                 formatedHTML += `<span style="color: lightblue">${char}</span>`
                             }
@@ -83,7 +85,7 @@ codes.forEach(code => {
                         case "]":
 
                             if (dontHightlithChar) {
-                                formatedHTML += char;
+                                formatedHTML += `<span style="color: ${dontHightlithCharColor}">${char}</span>`;
                             } else {
                                 formatedHTML += `<span style="color: lightgreen">${char}</span>`
                             }
@@ -95,7 +97,7 @@ codes.forEach(code => {
 
                         default:
                             if (dontHightlithChar) {
-                                formatedHTML += `<span style="color: red">${char}</span>`;
+                                formatedHTML += `<span style="color: ${dontHightlithCharColor}">${char}</span>`;
 
                             } else {
                                 formatedHTML += char;

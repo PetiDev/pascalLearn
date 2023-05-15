@@ -28,7 +28,7 @@
                 <a href="#elagazas">Elágazás</a>
                 <a href="#ciklusok">Ciklusok</a>
                 <a href="#tombok">Tömbök</a>
-                <a href="#eljarasokEsFuggvwnyek" disabled>Eljárások és függvények</a>
+                <a href="#eljarasokEsFuggvenyek">Eljárások és függvények</a>
             </menu>
         </div>
     </header>
@@ -36,9 +36,11 @@
         <section>
             <h2 id="bevezeto">Bevezető</h2>
             <span>
-                <p>Azt hogy mi a program vagy programozás azt nem vagyok hajlandó belerakni. (kivéve ha megkér rá valaki)
+                <p>Azt hogy mi a program vagy programozás azt nem vagyok hajlandó belerakni. (kivéve ha megkér rá
+                    valaki)
                 </p>
-                <strong>A pascal nem <i>case sensitive</i> szóval ez: <i>WriTeLN()</i> ugyan az mint ez <i>writeln()</i>.</strong>
+                <strong>A pascal nem <i>case sensitive</i> szóval ez: <i>WriTeLN()</i> ugyan az mint ez
+                    <i>writeln()</i>.</strong>
                 <strong>De azért egy minimálisan figyeljünk odará hogy nézzen ki valahogy</strong>
             </span>
             <p>
@@ -396,7 +398,8 @@ END.
             </code>
             <h3>Többdimenziós tömb</h3>
             <span>
-                <p>Nagyon hasonlít az előzőhöz, annyi hogy nem egy indexe van egy tömb elemének hanem kettő vagy több</p>
+                <p>Nagyon hasonlít az előzőhöz, annyi hogy nem egy indexe van egy tömb elemének hanem kettő vagy több
+                </p>
             </span>
             <code>
 <pre>
@@ -416,6 +419,129 @@ var x :integer;
 BEGIN
     for x:= 1 to 10 do writeln(lista[x]);
 END.
+</pre>
+            </code>
+        </section>
+        <section>
+            <h2 id="eljarasokEsFuggvenyek">Eljárás és függvény</h2>
+            <span>
+                <p>Mind a kettő egy kódrészlet amit meg tudsz hívni bármikor.</p>
+                <p>A kódban gyakranhasznált dolgokat célszerű a fentiek valamelyikébe rakni.</p>
+                <p>Az <b>eljárás</b> és a <b>függvény</b> közt a definiálásukon kívül annyi a különbség, hogy az
+                    eljárásnak nincs visszatérési értéke.</p>
+            </span>
+            <h3>Eljárás</h3>
+            <ul>
+                Definiálása, létrehozása
+                <li>
+                    Paraméter nélküli
+                    <ul>
+                        <li>
+                            <strong>Procedure</strong> <i>eljárásNeve</i>;
+                            <br>
+                            <strong>begin</strong>
+                            <br>
+                            <i>kód</i>
+                            <br>
+                            <strong>end;</strong>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Paraméteres eljárás
+                    <ul>
+                        <li>
+                            <strong>Procedure</strong>(<i>argumentumNév</i>:<i>argumentumTípus</i> )
+                            <i>eljárásNeve</i>;<br><strong>begin</strong><br><i>kód</i><br><strong>end;</strong>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <code>
+<pre>
+(*Paraméter nélküli*)
+
+Procedure varj;
+begin
+    write('Nyomj entert a megoldáshoz');
+    readln;
+end;
+
+BEGIN
+    writeln('3+2=');
+    varj;
+    writeln('5.');
+    writeln('5*7=');
+    varj;
+    writeln('35.');
+END.
+</pre>
+            </code>
+            <br>
+            <code>
+<pre>
+(*Paraméteres*)
+
+Procedure csik(sz:integer);
+var i:integer;
+begin
+    for i:=1 to sz do write('-');
+    writeln;
+end;
+
+BEGIN
+    csik(10);
+    csik(20);
+    csik(10);
+END.
+</pre>
+            </code>
+            Function kob(a:real):real;
+            Begin
+            kob:=a*a*a;
+            End;
+            <h3>Függvény</h3>
+            <ul>
+                <li>A <b>visszatérési érték</b>et úgy adjuk meg mintha értéket adnánk egy változónak aminek a neve megegyezik a
+                    függvény nevével</li>
+                <li>
+                    Definiálás
+                    <ul>
+                        <li>
+                            <strong>Function</strong> <i>függvényNév</i>(<i>argumentumNév</i> :<i>argumentumTípus</i>)
+                            :<i>visszatérésiÉrtékTípusa</i>;
+                            <br>
+                            <strong>begin</strong>
+                            <br>
+                            <i>kód</i>
+                            <br>
+                            <strong>end;</strong>
+                        </li>
+                    </ul>
+
+                </li>
+                <li>
+                    Több argumentumot is meg lehet adni vesszővel elválasztva
+                    <ul>
+                        <li>
+                            <strong>Function</strong> <i>függvényNév</i>(<i>argumentumNév</i> :<i>argumentumTípus</i>,
+                            <i>másikArgumentumNév</i> :<i>másikArgumentumTípus</i>)
+                            :<i>visszatérésiÉrtékTípusa</i>;
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <code>
+<pre>
+Function osszead(x,n:integer):integer;
+begin
+    osszead := x + n;
+end;
+
+BEGIN
+    if osszead(2,3) = 5 then writeln('Működik!');
+END.
+
 </pre>
             </code>
         </section>
