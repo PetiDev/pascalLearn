@@ -27,7 +27,7 @@
                 <a href="#valtozok">Változók</a>
                 <a href="#elagazas">Elágazás</a>
                 <a href="#ciklusok">Ciklusok</a>
-                <a href="#tombok" disabled>Tömbök</a>
+                <a href="#tombok">Tömbök</a>
                 <a href="#eljarasokEsFuggvwnyek" disabled>Eljárások és függvények</a>
             </menu>
         </div>
@@ -36,16 +36,17 @@
         <section>
             <h2 id="bevezeto">Bevezető</h2>
             <span>
-                <p>Bármilyen meglepő nem fejből fogom írni az össze szöveget.</p>
-                <p>Azt hogy mi a program vagy programozás azt nem vagyok hajlandó belerakni. (kivéve ha megkér avalaki)
+                <p>Azt hogy mi a program vagy programozás azt nem vagyok hajlandó belerakni. (kivéve ha megkér rá valaki)
                 </p>
+                <strong>A pascal nem <i>case sensitive</i> szóval ez: <i>WriTeLN()</i> ugyan az mint ez <i>writeln()</i>.</strong>
+                <strong>De azért egy minimálisan figyeljünk odará hogy nézzen ki valahogy</strong>
             </span>
             <p>
                 A pascal programozáshoz célszerű letölteni valamit ammiben írni is tudjuk szóval itt van ez:
-                <a href="https://sourceforge.net/projects/lazarus/">Lazarus</a>
+                <a target="_blank" href="https://sourceforge.net/projects/lazarus/">Lazarus</a>
             </p>
             <p>
-                Vagy van egy online alternatíva: <a
+                Vagy van egy online alternatíva: <a target="_blank"
                     href="https://www.onlinegdb.com/online_pascal_compiler">online_pascal_compiler</a>
             </p>
         </section>
@@ -210,6 +211,8 @@
                         </li>
                     </ul>
                 </li>
+                <li>A write és a writeln több argumentumot is el tud fogadni zeket vesszövel kell elválaszatni</li>
+                <li>Az argumentumokat egymás mellé fogja kiírni típustól függetlenül</li>
             </ul>
             <h3>Így néz ki a gyakorlatban egy egyszerű program</h3>
             <code>
@@ -356,12 +359,65 @@ END.
                 <p>Minden iterációnál hozzá ad egy megadott összeget egy változóhoz</p>
             </span>
             <code>
-                <pre>
+<pre>
+var x :integer;
 BEGIN
     for x:= 1 to 10 do writeln(x);
 END.
 </pre>
 </code>
+        </section>
+        <section>
+            <h2 id="tombok">Tömbök</h2>
+            <span>
+                <p>A <i>tömb</i> is egy adat típus, kifejezetten gyakran használjuk.</p>
+                <p>A tömb adatok tárolására alkalmas.</p>
+                <p>A benne lévő adatokhoz a sorszámukkal (másnéven <b><strong>index</strong>ükkel</b>) tudunk
+                    hozzáférni.</p>
+            </span>
+            <ul>
+                <li>
+                    Lista hosszának megadása
+                    <ul>
+                        <li><i>változónév</i><strong>:array</strong>[<i>hossz</i>] <strong>of</strong> <i>típus</i></li>
+                        <li><i>lista</i><strong>:array</strong>[<i>1..10</i>] <strong>of</strong> <i>integer</i></li>
+                        <li><i>lista</i><strong>:array</strong>[<i>1..3</i>] <strong>of</strong> <i>string</i></li>
+                    </ul>
+                </li>
+            </ul>
+            <code>
+<pre>
+Var lista :array[1..10] of integer;
+BEGIN
+    lista[1] := 23;
+    writeln('A lista első eleme:', lista[1]);
+END.
+</pre>
+            </code>
+            <h3>Többdimenziós tömb</h3>
+            <span>
+                <p>Nagyon hasonlít az előzőhöz, annyi hogy nem egy indexe van egy tömb elemének hanem kettő vagy több</p>
+            </span>
+            <code>
+<pre>
+Var lista:array [1..5,1..3] of string;
+BEGIN
+    lista[1,1] := 'Szia';
+    lista[1,2] := 'olvasó';
+    writeln('A lista első eleme: ', lista[1,1], ' és ', lista[1,2]);
+END.
+</pre>
+            </code>
+            <h3>Tömb bejárása</h3>
+            <code>
+<pre>
+Var lista :array[1..10] of integer;
+var x :integer;
+BEGIN
+    for x:= 1 to 10 do writeln(lista[x]);
+END.
+</pre>
+            </code>
         </section>
     </main>
     <footer>

@@ -52,14 +52,24 @@ header{
     justify-content: space-evenly;
     background-color: var(--clr-green);
 }
+header div{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
 header label:hover, header label:focus-within{
     color: var(--clr-dark);
+}
+header label{
+    width: 50px;
 }
 header label svg{
     fill: currentColor;
     height: 100%;
 }
 header menu{
+    position: absolute;
+    top: 50px;
     height: fit-content;
     transform: scaleY(0);
     overflow: hidden;
@@ -92,7 +102,7 @@ main h3{
     margin-top: 2rem;
 }
 main section{
-    pointer-events: none;
+    
     padding-inline: 10rem;
     padding-block: 2rem;
     border-bottom: 3px solid var(--clr-green);
@@ -111,11 +121,13 @@ footer{
 }
 footer section{
     border-left: 3px solid var(--clr-red);
+    border-top: 3px solid var(--clr-red);
     padding-inline: 1rem;
 }
 *[disabled]{
     filter: grayscale();
     cursor: not-allowed;
+    background-color: var(--clr-gray);
 }
 code {
     background-color: var(--clr-gray);

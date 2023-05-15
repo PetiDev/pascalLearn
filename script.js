@@ -12,21 +12,35 @@ codes.forEach(code => {
         let words = line.split(/(\s){1,4}/);
         words.forEach(word => {
             let needChar = false;
-
             switch (word.toLowerCase()) {
                 case "":
                     formatedHTML += `<span tab> </span>`
                     break;
 
-                case "integer":
-                case "string":
-                    formatedHTML += `<span style="color: lightblue">${word}</span>`
+                case "integer;":
+                case "string;":
+                case ":integer;":
+                case ":string;":
+                    formatedHTML += `<span style="color: lightblue">${word}</span>`;
                     break;
+
+                case word.toLowerCase().match(/:array\[.+\]/)?.input:
+                    let w = word.split("");
+                    w.forEach(o => {
+                        if (o == "[" || o == "]") {
+                            formatedHTML += `<span style="color: lightgreen">${o}</span>`
+                        } else {
+                            formatedHTML += `<span style="color: lightblue">${o}</span>`
+                        }
+                    });
+                    break;
+
                 case "begin":
                 case "end;":
                 case "end.":
                     formatedHTML += `<span style="color: red">${word}</span>`;
                     break;
+
                 case "var":
                 case "while":
                 case "for":
@@ -37,10 +51,8 @@ codes.forEach(code => {
                     formatedHTML += `<b>${word}</b>`
                     break;
 
-
                 default:
                     needChar = true
-                    //formatedHTML += `<span>${word}</span>`
                     break;
             }
             if ((word != "" || word != " ") && needChar) {
