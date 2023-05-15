@@ -7,7 +7,8 @@
     --clr-green: hsl(121, 62%, 39%);
     --clr-notImportant-text: gray;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,58 +17,71 @@
     scroll-behavior: smooth;
 }
 
-h1{
+h1 {
     font-size: 2.5rem;
     font-weight: 900;
 }
-h2{
+
+h2 {
     font-size: 2rem;
     font-weight: 700;
 }
-h3{
+
+h3 {
     font-size: 1.5rem;
     font-weight: 500;
 }
-i{
+
+i {
     font-style: italic;
 }
-strong{
+
+strong {
     font-weight: 600;
     color: var(--clr-red);
 }
-ul ul{
+
+ul ul {
     margin-left: 1rem;
     margin-bottom: 1rem;
 }
-b{
+
+b {
     font-weight: bold;
 }
 
-body{
+body {
     display: grid;
     grid-template-rows: 3rem 1fr 100px;
 }
-header{
+
+header {
     display: flex;
     justify-content: space-evenly;
     background-color: var(--clr-green);
 }
-header div{
+
+header div {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-header label:hover, header label:focus-within{
+
+header label:hover,
+header label:focus-within {
     color: var(--clr-dark);
 }
-header label{
+
+header label {
     width: 50px;
 }
-header label svg{
+
+header label svg {
     fill: currentColor;
     height: 100%;
 }
-header menu{
+
+header menu {
     position: absolute;
     top: 50px;
     height: fit-content;
@@ -81,7 +95,7 @@ header menu{
     background-color: var(--clr-dark);
 }
 
-header menu a{
+header menu a {
     padding-inline: 1rem;
     padding-block: .3rem;
     transition: .3s;
@@ -89,46 +103,62 @@ header menu a{
     color: currentColor;
     font-size: 1.3rem;
 }
-header menu a:hover,menu a:focus-within{
+
+header menu a:hover,
+menu a:focus-within {
     background-color: var(--clr-green);
 }
-#menuCheck{
+
+#menuCheck {
     display: none;
 }
-#menuCheck:checked + menu{
+
+#menuCheck:checked+menu {
     transform: scaleY(1);
 }
-main h3{
+
+main h1 {
+    display: none;
+    text-align: center;
+}
+
+main h3 {
     margin-top: 2rem;
 }
-main section{
-    
+
+main section {
+
     padding-inline: 10rem;
     padding-block: 2rem;
     border-bottom: 3px solid var(--clr-green);
 }
 
-main section h2{
+main section h2 {
     padding-bottom: 1rem;
 }
-main span{
+
+main span {
     padding: 1rem;
 }
-footer{
+
+footer {
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
 }
-footer section{
+
+footer section {
     border-left: 3px solid var(--clr-red);
     border-top: 3px solid var(--clr-red);
     padding-inline: 1rem;
 }
-*[disabled]{
+
+*[disabled] {
     filter: grayscale();
     cursor: not-allowed;
     background-color: var(--clr-gray);
 }
+
 code {
     background-color: var(--clr-gray);
     width: 100%;
@@ -136,23 +166,49 @@ code {
     padding: 1rem;
     border-radius: 5px;
 }
-code span{
+
+code span {
     width: fit-content;
     padding: .1ch;
 }
-code span[tab]{
+
+code span[tab] {
     padding: 1ch;
 }
-code span:empty{
+
+code span:empty {
     display: none;
 }
+
+#scrollTop {
+    display: none;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--clr-gray);
+    border: none;
+    border-radius: 5px;
+}
+
+#scrollTop:hover,
+#scrollTop:focus-within {
+    background-color: gray;
+}
+
 @media (max-width: 730px) {
-    header h1{
+    header h1 {
         display: none;
     }
+
+    main h1 {
+        display: block;
+    }
 }
+
 @media (max-width: 730px) {
-    main section{
+    main section {
         padding: 1rem;
     }
 }

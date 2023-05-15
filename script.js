@@ -114,3 +114,33 @@ codes.forEach(code => {
 
     code.innerHTML = formatedHTML;
 });
+
+//menü bezárása ha kattint
+const menuCheck = document.getElementById("menuCheck")
+document.addEventListener("mousedown", ()=>{
+    if (menuCheck.checked) {
+        menuCheck.checked = false;
+    }
+})
+document.addEventListener("touchstart", ()=>{
+    if (menuCheck.checked) {
+        menuCheck.checked = false;
+    }
+})
+
+
+//vissza a tetejére
+const scrollTop = document.getElementById("scrollTop")
+document.addEventListener("scroll",()=>{
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        console.log("asd");
+        scrollTop.style.display = "block";
+    }else{
+        scrollTop.style.display = "none";
+    }
+
+})
+function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
