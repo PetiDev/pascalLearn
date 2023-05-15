@@ -30,6 +30,7 @@
                 <a href="#ciklusok">Ciklusok</a>
                 <a href="#tombok">Tömbök</a>
                 <a href="#eljarasokEsFuggvenyek">Eljárások és függvények</a>
+                <a href="#fajlkezeles">Fájlkezelés</a>
             </menu>
         </div>
     </header>
@@ -504,7 +505,8 @@ END.
             End;
             <h3>Függvény</h3>
             <ul>
-                <li>A <b>visszatérési érték</b>et úgy adjuk meg mintha értéket adnánk egy változónak aminek a neve megegyezik a
+                <li>A <b>visszatérési érték</b>et úgy adjuk meg mintha értéket adnánk egy változónak aminek a neve
+                    megegyezik a
                     függvény nevével</li>
                 <li>
                     Definiálás
@@ -545,6 +547,135 @@ BEGIN
 END.
 </pre>
             </code>
+        </section>
+        <section>
+            <h2 id="fajlkezeles">Fájlkezelés</h2>
+            <span>
+                <p>Szöveges fileok írása és olvasása</p>
+            </span>
+            <ul>
+                <li>
+                    Fájl létrehozása:
+                    <ul>
+                        <li>
+                            Létre kell hoznunk egy text típusú változót:
+                            <ul>
+                                <li>
+                                    <i>változóNeve</i>:<strong>text</strong>;
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Hozzá kell rendelni a változóhoz egy adott fájlt annak útvonala segítségével:
+                    <ul>
+                        <li>
+                            <strong>assignfile</strong>(<i>fájl</i>, <i>útvonal</i>);
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Megnyitás olvasásra:
+                    <ul>
+                        <li>
+                            A fájlt vagy írásra, vagy olvasásra nyitjuk meg:
+                            <ul>
+                                <li>
+                                    <strong>reset</strong>(<i>fájl</i>);
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Megnyitás írásra:
+                    <ul>
+                        <li>
+                            Ez új fájlt hoz létre, ha van már ilyen, azttörli:
+                            <ul>
+                                <li>
+                                    <strong>rewrite</strong>(<i>fájl</i>);
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Megnyitás írásra létező fájlnál úgy, hogy a végéhez fűzünk adatot:
+                    <ul>
+                        <li>
+                            <strong>append</strong>(<i>fájl</i>);
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Fájl törlése:
+                    <ul>
+                        <li>
+                            <strong>erase</strong>(<i>fájl</i>);
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Olvasás:
+                    <ul>
+                        <li>
+                            <strong>read</strong>(<i>fájl</i>, <i>változók</i>);
+                        </li>
+                        <li>
+                            <strong>readln</strong>(<i>fájl</i>, <i>változók</i>);
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Írás:
+                    <ul>
+                        <li>
+                            <strong>write</strong>(<i>fájl</i>, <i>kifejezések</i>);
+                        </li>
+                        <li>
+                            <strong>writeln</strong>(<i>fájl</i>, <i>kifejezések</i>);
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Vége van-e a fájlnak:
+                    <ul>
+                        <li>beolvastuk-e az utolsó adatot, függvény, igaz/hamis:</li>
+                        <li><b>E</b>nd <b>O</b>f <b>F</b>ile</li>
+                        <ul>
+                            <li>
+                                <strong>eof</strong>(<i>fájl</i>);
+                            </li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>
+                    Vége van-e egy sor beolvasásának:
+                    <ul>
+                        <li>
+                            <strong>eoln</strong>(<i>fájl</i>);
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Fájl lezárása:
+                    <ul>
+                        <li>
+                            Erre főként írásnál van szükség, hogy az utolsó adatok is bekerüljenek a fájlba:
+                            <ul>
+                                <li>
+                                    <strong>closefile</strong>(<i>fájl</i>);
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                   <strong>A read és write utasításokat úgyanúgy kell használni, mint amikor a billentyűzetről olvasunk és a képernyőre írunk, csak most megadjuk a fájlt is.</strong>
+                </li>
+            </ul>
         </section>
     </main>
     <footer>
