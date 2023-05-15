@@ -169,7 +169,7 @@ code {
 
 code span {
     width: fit-content;
-    padding: .1ch;
+    padding: 0ch;
 }
 
 code span[tab] {
