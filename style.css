@@ -1,6 +1,7 @@
 :root {
     font-family: Calibri, trebuchet ms, sans-serif;
     --clr-dark: rgb(28, 27, 34);
+    --clr-gray: rgb(39, 38, 46);
     --clr-light: rgb(250, 250, 250);
     --clr-red: rgb(211, 104, 120);
     --clr-green: hsl(121, 62%, 39%);
@@ -115,6 +116,13 @@ footer section{
 *[disabled]{
     filter: grayscale();
     cursor: not-allowed;
+}
+code {
+    background-color: var(--clr-gray);
+    width: 100%;
+    display: block;
+    padding: 1rem;
+    border-radius: 5px;
 }
 code span{
     width: fit-content;
