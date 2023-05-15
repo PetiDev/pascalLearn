@@ -116,14 +116,17 @@ codes.forEach(code => {
 });
 
 //menü bezárása ha kattint
-const menuCheck = document.getElementById("menuCheck")
+const menuCheck = document.getElementById("menuCheck");
 document.addEventListener("mousedown", ()=>{
-    if (menuCheck.checked) {
-        menuCheck.checked = false;
-    }
+    let isChechked = menuCheck.checked;
+    setTimeout(() => {
+        if (isChechked) {
+            menuCheck.checked = false;
+        }
+    }, 60);
 })
 document.addEventListener("touchstart", ()=>{
-    if (menuCheck.checked) {
+    if (isChechked) {
         menuCheck.checked = false;
     }
 })
