@@ -38,6 +38,9 @@ ul ul{
     margin-left: 1rem;
     margin-bottom: 1rem;
 }
+b{
+    font-weight: bold;
+}
 
 body{
     display: grid;
@@ -113,7 +116,16 @@ footer section{
     filter: grayscale();
     cursor: not-allowed;
 }
-
+code span{
+    width: fit-content;
+    padding: .1ch;
+}
+code span[tab]{
+    padding: 1ch;
+}
+code span:empty{
+    display: none;
+}
 @media (max-width: 730px) {
     header h1{
         display: none;
