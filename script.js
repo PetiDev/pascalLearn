@@ -21,18 +21,14 @@ codes.forEach(code => {
                 case "string;":
                 case ":integer;":
                 case ":string;":
+                case ":array":
                     formatedHTML += `<span style="color: lightblue">${word}</span>`;
                     break;
 
                 case word.toLowerCase().match(/:array\[.+\]/)?.input:
-                    let w = word.split("");
-                    w.forEach(o => {
-                        if (o == "[" || o == "]") {
-                            formatedHTML += `<span style="color: lightgreen">${o}</span>`
-                        } else {
-                            formatedHTML += `<span style="color: lightblue">${o}</span>`
-                        }
-                    });
+                    formatedHTML += `<span style="color: lightblue">${word.slice(0, 6)}</span>`
+                    word = word.slice(6)
+                    needChar = true;
                     break;
 
                 case "begin":
@@ -83,12 +79,18 @@ codes.forEach(code => {
                             break;
                         case "(":
                         case ")":
+                        case "[":
+                        case "]":
 
                             if (dontHightlithChar) {
                                 formatedHTML += char;
                             } else {
                                 formatedHTML += `<span style="color: lightgreen">${char}</span>`
                             }
+                            break;
+                        case char.match(/\d/)?.input:
+                            formatedHTML += `<span style="color: pink">${char}</span>`
+
                             break;
 
                         default:
