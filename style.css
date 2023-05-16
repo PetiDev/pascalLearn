@@ -74,6 +74,7 @@ header label:focus-within {
 
 header label {
     width: 50px;
+    height: 100%;
 }
 
 header label svg {
@@ -198,6 +199,9 @@ code span:empty {
 }
 
 @media (max-width: 730px) {
+    :root{
+        font-size: .87rem;
+    }
     header h1 {
         display: none;
     }
@@ -205,9 +209,7 @@ code span:empty {
     main h1 {
         display: block;
     }
-}
 
-@media (max-width: 730px) {
     main section {
         padding: 1rem;
     }
